@@ -34,5 +34,16 @@ module.exports = ({ env }) => ({
         plugin: {},
       },
     },
+    "vercel-deploy": {
+      enabled: true,
+      config: {
+        deployHook:
+          "https://api.vercel.com/v1/integrations/deploy/prj_nelEKKOmyBZBNONq1zDYXfvk0PeP/gp7nt7jNHP",
+        apiToken: "ZAmGedjEGIpoqK2i1U6DvyH1",
+        appFilter: "headless-cms-yes-i-do49-2afx",
+        teamFilter: "dexapi",
+        roles: ["strapi-super-admin", "strapi-editor", "strapi-author"],
+      },
+    },
 
   });
