@@ -635,8 +635,9 @@ a:hover {
 /***Skill***/
 .skill__container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
+  width: 45vw;
 }
 .skill__container .skill__frontend, .skill__container .skill__backend {
   background: #23796a;

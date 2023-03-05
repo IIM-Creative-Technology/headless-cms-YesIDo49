@@ -113,6 +113,31 @@
     </div>
   </section>
 
+  <section  class="section" id="skill">
+    <div  class="section__title">
+      <h5>Que puis-je apporter ?</h5>
+      <h2>Compétences</h2>
+    </div>
+
+    <div  class="container skill__container">
+      <div class="skill__frontend" id="test">
+        <h3>Développement Web</h3>
+        <div v-if="languages">
+          <div class="skill__content">
+            <article v-for="language in languages.data" class="skill__details">
+              <div>
+                <h4>{{ language.name }}</h4>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
   <section id="contact" class="section">
     <div class="section__title">
       <h5>Restons en contact</h5>
@@ -152,6 +177,8 @@ const { find } = useStrapi()
 
 const projects = ref()
 
+const languages = ref()
+
 const types = ref([])
 
 const languagesTypes = ref([])
@@ -183,17 +210,21 @@ function sort(type) {
   filterType = type;
 }
 
-
-
 onMounted(async () => {
   projects.value = await find('projects', {
     populate: 'deep',
     sort: {date : "DESC"}
   })
+  languages.value = await find('languages', {
+    populate: 'deep'})
+  console.log(languages.value)
+
   types.value = new Set(projects.value.data.map(project =>{
     return project.type
   }))
 })
+
+
 </script>
 
 <style>
