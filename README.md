@@ -18,6 +18,7 @@ npm run install
 
 ### Accès Strapi :
 name : admin
+
 mdp Strapi : strapiAdmin49
 
 Lancer Nuxt : 
