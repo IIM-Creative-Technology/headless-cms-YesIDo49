@@ -23,7 +23,7 @@ name : admin
 mdp Strapi : strapiAdmin49
 
 
-Lancer Nuxt : 
+### Lancer Nuxt : 
 ```
 npm run dev
 ```
